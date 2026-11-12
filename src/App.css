@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  font-family:'Courier New', Courier, monospace;
+  line-height: 1.5;
+  color:#87511B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+html {
+  min-height:100vh;
+  margin:0;
+  padding: 0;
+  background-color: transparent;
+}
+
+/*Main*/
+
+.app-container {
+  min-height:100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+}
+
+/*Header*/
+
+
+.blog-header {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+.blog-header h1 {
+  font-size: 2.25rem;
+  color:#BF0811;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-header p {
+  color:#87511B;
+  margin-top: 0.5rem;
+}
+
+.postHeader,
+.postHeader p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Updated styling for the nav*/
+
+
+.nav {
+  display: flex;
+  gap:3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  list-style-type: none;
+}
+
+
+.nav a {
+  text-decoration: none;
+  color: #87511B;
+  font-weight: 500;
+}
+
+
+.nav a:hover {
+  color: #BF0811;
+}
+
+/*Styling Nav Links for Dark Mode*/
+body.dark nav a,
+body.dark .nav-link {
+  color:#eeedea
+}
+
+
+.Img {
+  display:flex;
+  align-items: center;
+  gap:0.75rem;
+}
+
+
+.logo {
+  width: 700px;
+  height:auto;
+  object-fit: contain;
+}
+
+
+/*Added styling for Light and Dark mode*/
+body.light {
+  background-color: #eeedea ; 
+}
+
+body.dark {
+  background-color: #001b3d ;
+}
+
+body.dark p {
+color: #eeedea;
+}
+
+body.dark h1, h2{
+  color: #BF0811;
+}
+
+.postHeader {
+  color: #BF0811;
+}
+
+/*Styling for view more & back button*/
+.article a,
+.blog-main a {
+  font-weight: 500px;
+  text-decoration: none;
+  gap: 2rem;
+  color:#BF0811;
+}
+
+.article a:hover,
+.blog-main a:hover {
+  color:#8B0000;
+}
+
+/*Like Button & Post*/
+.like-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight:500;
+  cursor: pointer;
+  border-radius: 4px;
+
+
+  display: flex;
+  align-items:center;
+  gap:0.5rem;
+ 
+  background-color:#BF0811;
+  color:#ffff;
+  border: 1px solid #BF0811;
+}
+
+
+.like-btn:hover {
+  background-color: #8B0000;
+  border-color:#8B0000;
+}
+
+
+.like-btn.liked {
+  background-color: #8B0000;
+  border-color:#8B0000;
+  color:#ffff;
+}
+
+
+/*Comment Section*/
+.comment-section h3 {
+  color:#BF0811;
+  margin-bottom: 1rem;
+}
+
+
+.comment-item {
+  background-color: #eeedea;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+
+.comment-item strong, .comment-item p {
+  color:#87511B
+}
+
+
+.comment-item p {
+  margin-top: 0.35;
+}
+
+
+.no-comment {
+  color:#87511B;
+  font-style: italic;
+}
+
+
+.comments-section {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/*Syling comment section and comment box for dark mode*/
+body.dark .comment-item,
+body.dark .CommentBox-container {
+  background-color: #001b3d;
+  border-radius: 1px solid #001b3d;
+}
+
+
+body.dark .comment-section input,
+body.dark .comment-section textarea,
+body.dark .CommentBox-input ,
+body.dark .CommentBox-container textarea {
+  background-color: #807e7e;
+  color:#eeedea;
+  border: 1px solid #001b3d;
+}
+
+/*CommentBox*/
+.CommentBox-container {
+  display:flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #eeedea;
+  padding: 1.5rem;
+  margin: 20px 0;
+  min-height: 200px;
+
+}
+
+
+.CommentBox-input, .CommentBox-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top:5px;
+  border: 1px solid #87511B;
+  border-radius: 4px;
+  background-color:#eeedea;
+  color:#87511B;
+}
+
+
+.comment-form {
+  display:flex;
+  flex-direction:column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+.form {
+  display:flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.form label {
+  color:#BF0811;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+
+form input, .form textarea {
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family:initial;
+  font-size: 1rem;
+}
+
+
+.form input:focus, .form textarea:focus {
+  outline: none;
+  border-color: #8B0000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
+}
+
+.submit-btn {
+  background-color: #eeedea;
+  color: #8B0000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+
+.submit-btn:hover {
+  background-color:#8B0000;
+  color:#eeedea;
+}
+
+.comments-section {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/*Footer*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+  margin-top: 2rem;
+}
