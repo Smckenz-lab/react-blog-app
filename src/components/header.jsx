@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Link} from 'react-router'
 import { ThemeContext } from '../Pages/Theme';
 import logo from '../assets/Logo.png';
-import darklogo from '../assets/darklogo.png';
+import darkLogo from '../assets/darkLogo.png';
 
 //Added Theme and updated nav//
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
         <header className="blog-header">
             <div className="nav-container">
                 <div className="Img">
-                    <img src={theme == 'dark' ? darklogo : logo} 
+                    <img src={theme == 'dark' ? darkLogo : logo} 
                     alt="page logo"
                     className="logo"
                     />
