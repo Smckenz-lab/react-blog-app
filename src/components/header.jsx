@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router'
 import { ThemeContext } from '../Pages/Theme';
-import logo from '../assets/logo.png';
+import logo from '../assets/Logo.png';
 import darklogo from '../assets/darklogo.png';
 
 //Added Theme and updated nav//
