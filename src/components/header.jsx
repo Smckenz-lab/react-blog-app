@@ -3,10 +3,21 @@ import {Link} from 'react-router'
 import { ThemeContext } from '../Pages/Theme';
 import logo from '../assets/Logo.png';
 import darkLogo from '../assets/darkLogo.png';
+import {useAuth} from '../Login/AuthUser';
+import {useNavigate} from 'react-router';
 
 //Added Theme and updated nav//
 export default function Header() {
     const {theme, toggleTheme} = useContext(ThemeContext);
+    const {user, logout} = useAuth();
+    const navigate = useNavigate();
+
+    {/*Updated for logout function*/}
+
+    const handlelogout = () => {
+        logout();
+        navigate('/');
+    };
 
     {/*Updated logo to hopefully work with theme toggle*/}
 
@@ -26,10 +37,18 @@ export default function Header() {
                         <li> <Link to="/">Home</Link></li>
                         <li><Link to="/post/1">Post</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
+                        {user ? (
+                            <li className="Welcome-message">
+                                <span> Hello, {user.username} </span>
+                                <button onClick={logout} className="logout-btn">Logout</button>
+                            </li>
+                        ) : (
+                            <li><Link to="/login">Login</Link></li>
+                        )}
                         <li>
                             <button onClick={toggleTheme} className="theme-toggle"> {theme === 'light' ? '🌘Dark': '☀️Light'}</button>
                         </li>
-                    </ul>
+                    </ul>          
                 </nav>
             </div>
             <div className="sub-header">

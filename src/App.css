@@ -37,6 +37,127 @@ html {
   background-color: transparent !important;
 }
 
+/*Styling for login page*/
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+
+}
+
+.login-container h2 {
+  gap:2rem;
+  text-align: center;
+  color:#BF0811;
+}
+
+.login-card {
+  background-color: #eeedea;
+  border: 1px solid #eeedea;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #87511B;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-container label {
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color:#87511B;
+}
+
+.form-container form input {
+  border-radius: 6px;
+  border: 1px solid #eeedea;
+  background-color:#eeedea;
+  color:#87511B;
+  font-size: 1rem;
+}
+
+.error-message {
+  background-color: #8B0000;
+  color:#eeedea;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/*Styling for HomePage*/
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 1rem;
+  color:#BF0811;
+}
+
+.login-hero{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.login-img {
+  display: flex;
+  flex-direction: column;
+  Justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  height: 60vh;
+  width: auto;
+  background-size: cover, cover;
+  background-position: center, center;
+}
+
+.hpage-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color:#BF0811;
+}
+
+.hpage-description {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color:#87511B;
+}
+
+.hpage-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.login-btn, .post-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 4px;
+  cursor:pointer;
+  border: none;
+  background-color:#BF0811;
+  color:#eeedea;
+}
+
+.login-btn:hover, .post-btn:hover {
+  background-color: #8B0000;
+}
+
 /*Header*/
 
 
@@ -284,7 +405,7 @@ body.dark .CommentBox-container textarea {
 }
 
 
-form input, .form textarea {
+.form input, .form textarea {
   padding: 0.75rem;
   border-radius: 4px;
   font-family:initial;

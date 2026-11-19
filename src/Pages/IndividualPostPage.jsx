@@ -5,11 +5,17 @@ import LikeBtn from '../components/LikeBtn';
 import CommentBox from '../components/CommentBox';
 import Comment from '../components/Comments';
 
+//Imported for login//
+import { useAuth } from '../Login/AuthUser';
+import axios from 'axios';
+
+
 //Updated to fetch post and comments from API//
 export default function IndividualPostPage() {
     const {id} = useParams();
+    const {user} = useAuth();
     const [post, setPost] = useState(null);
-    const [user, setUser] = useState(null);
+    const [ authorUser, setAuthorUser] = useState(null);
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -21,7 +27,9 @@ export default function IndividualPostPage() {
             return fetch(`https://jsonplaceholder.typicode.com/users/${postData.userId}`);
         })
         .then(response => response.json())
-        .then(userData => setUser(userData))
+        .then((userData) => {
+            setAuthorUser(userData);
+        })
         .catch(error => console.error('Error fetching post or user:', error));
 
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
@@ -39,7 +47,7 @@ export default function IndividualPostPage() {
     }, [id]);
 
 
-    const handleAddComment = (newComments) => {
+    const handleAddComment = (newCommentData) => {
         axios.post(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
             name: newCommentData.author,
             body: newCommentData.content,
@@ -63,7 +71,7 @@ export default function IndividualPostPage() {
     }
     return (
         <div>
-            <Link to='/'>← Back</Link>
+            <Link to='/posts'>← Back</Link>
 
             <article>
                 <h1>{post.title}</h1>
@@ -75,11 +83,20 @@ export default function IndividualPostPage() {
             </article>
 
             {/*Comment section*/}
+            {/*Updated for only users who are logged in*/}
             <section>
-                <CommentBox onAddComment={handleAddComment} />
                 <Comment commentsData={comments || []} />
+            
+                {user ? (
+                    <CommentBox onAddComment={handleAddComment}/> 
+                ) : (
+                    <div>
+                        <p>Please log in to leave a comment</p>
+                        <Link to="/login">Login To Comment</Link>
+                    </div>
+                )}
             </section>
         </div>
         
-    )
+    );
 }

@@ -12,6 +12,11 @@ import BlogPostPage from './Pages/BlogPostsPage';
 import IndividualPostPage from './Pages/IndividualPostPage';
 import ContactPage from './Pages/ContactPage';
 
+//Imported for login//
+import { AuthProvider} from './Login/AuthUser';
+import LoginPage from './Login/LoginPage';
+import HomePage from './Login/HomePage';
+
 import './App.css';
 
 //Updated the main function// 
@@ -28,9 +33,12 @@ function AppContent() {
       <main className="blog-main">
         <Routes>
           {/*Added links to my pages*/}
-          <Route path="/" element={<BlogPostPage postsData={post} />} />
+          {/*Updated for login & Homepage*/}
+          <Route path="/" element={<HomePage />} /> 
+          <Route path="/posts" element={<BlogPostPage postsData={post} />} />
           <Route path="/post/:id" element={<IndividualPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </main>
     <Footer />
@@ -40,8 +48,13 @@ function AppContent() {
 
 export default function App() {
   return (
-  <ThemeProvider>
-    <AppContent />
-  </ThemeProvider>  
+  <AuthProvider>
+   <ThemeProvider>
+      <AppContent />
+    </ThemeProvider> 
+  </AuthProvider>
+
   );
 }
+
+ 
