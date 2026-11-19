@@ -1,6 +1,6 @@
 import {Link} from 'react-router'
 import { useAuth} from './AuthUser';
-import Hero from '../assets/Hero.png'
+import Hero from '../assets/hero.png'
 
 export default function HomePage() {
     const {user} = useAuth();
