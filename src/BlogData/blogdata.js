@@ -52,7 +52,7 @@ export const initialPostData = [
     id:5,
     title: "Anyone like spooky or haunting animes???",
     content: "I love scary stuff. Idk but the horror animes never get enough love. Highly recomment animes like Shiki, The Promise Neverland, Attack on Titan, Corpse Party, Ghost Hunt, Another",
-    author: "BakugoXDekulovechild",
+    author: "Jacobs32inchbustdownfromTwilight",
     date: "2026-10-25",
     comments:[
     {id: 1, author: "Jimmothy", content: "Wat is bro's user name?"},
@@ -63,8 +63,8 @@ export const initialPostData = [
 {
     id:6,
     title: "Dont sleep on the old school anime",
-    content: "1.Akria, 2.Great Teacher Onizuka, 3.Code Geass, 4.Ghost In Shell, 5.Berserk(Super dark btw), 6.Cowboy Bebop, 7.Yu Yu Hakusho, 8.Trigun, 9.Hellsing, 10.The Prince of tennis",
-    author: "Jacobs8inchbustdownfromTwilight",
+    content: "1.Akria, 2.Great Teacher Onizuka, 3.Code Geass, 4.Ghost In Shell, 5.Berserk(Super dark btw), 6.Cowboy Bebop, 7.YuYu Hakusho, 8.Trigun, 9.Hellsing, 10.The Prince of Tennis",
+    author: "BakugoXDekulovechild",
     date: "2026-10-27",
     comments:[]
 }

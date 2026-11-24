@@ -11,6 +11,7 @@ import {initialPostData} from './BlogData/blogdata';
 import BlogPostPage from './Pages/BlogPostsPage';
 import IndividualPostPage from './Pages/IndividualPostPage';
 import ContactPage from './Pages/ContactPage';
+import NewPostPage from './Pages/NewPostPage';
 
 //Imported for login//
 import { AuthProvider} from './Login/AuthUser';
@@ -26,6 +27,11 @@ function AppContent() {
   const {theme} = useContext(ThemeContext);
   const [post, setPost] = useState(initialPostData);
 
+  //Added NewPost//
+  const handleAddPost = (newPost) => {
+    setPost((prevPosts) => [newPost, ...prevPosts]);
+  }
+
    //Updates to render Blog post list//
   return (
     <div className={`app-container ${theme}`}>
@@ -39,6 +45,7 @@ function AppContent() {
           <Route path="/post/:id" element={<IndividualPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/new-post" element={<NewPostPage onAddPost={handleAddPost} />} />
         </Routes>
       </main>
     <Footer />

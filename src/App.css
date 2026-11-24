@@ -37,6 +37,7 @@ html {
   background-color: transparent !important;
 }
 
+
 /*Styling for login page*/
 .form-container {
   display: flex;
@@ -262,7 +263,7 @@ body.dark h1, h2{
 /*Styling for view more & back button*/
 .article a,
 .blog-main a {
-  font-weight: 500px;
+  font-weight: 500;
   text-decoration: none;
   gap: 2rem;
   color:#BF0811;
@@ -273,6 +274,39 @@ body.dark h1, h2{
   color:#8B0000;
 }
 
+
+
+/*Added styling for new post button*/
+.newpost-container {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 24px;
+  position:sticky;
+  bottom: 24px;
+}
+
+.newpost-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 12px;
+  background-color: #BF0811;
+  color: #eeedea;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+a.newpost-btn:hover {
+  background-color: #8B0000;
+  color:#eeedea
+} 
+
+a.newpost-btn{
+  color:#eeedea
+}
 /*Like Button & Post*/
 .like-button {
   padding: 0.5rem 1rem;

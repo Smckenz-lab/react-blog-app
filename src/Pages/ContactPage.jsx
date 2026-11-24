@@ -11,13 +11,13 @@ import React, {useState} from 'react';
         const {name, value} = e.target;
         setFormData((prevData) => ({
             ...prevData,
-            [Username]: value
+            [name]: value
         }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.h("Form submitted:", formDate);
+        console.log("Form submitted:",  formData);
         alert("Thanks for your message! We'll reach out as soon as possible!👍")
         setFormData({Username: '', Email:'', Message:''});
     };
@@ -27,8 +27,8 @@ import React, {useState} from 'react';
             <h2>Contact Us</h2>
             <p> Any questions, concerns, or feedback? Let Us Know🤓</p>
 
-            <form onSubmit={handleSubmit}>
-                <div>
+            <form onSubmit={handleSubmit} className="comment-form">
+                <div className="form">
                     <label htmlFor="Username"> Username:</label>
                     <input
                         type="text"
@@ -40,7 +40,7 @@ import React, {useState} from 'react';
                     />
                 </div>
 
-                <div>
+                <div className="form">
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -52,7 +52,7 @@ import React, {useState} from 'react';
                     />
                 </div>
 
-                <div>
+                <div className="form">
                     <label htmlFor="messgae"> Message: </label>
                     <textarea
                         id="message"
@@ -62,7 +62,7 @@ import React, {useState} from 'react';
                         required
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className="submit-btn">Submit</button>
             </form>
         </div>
     );

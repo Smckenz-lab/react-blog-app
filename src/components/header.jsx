@@ -35,7 +35,7 @@ export default function Header() {
                 <nav>
                     <ul className="nav">
                         <li> <Link to="/">Home</Link></li>
-                        <li><Link to="/post/1">Post</Link></li>
+                        <li><Link to="/posts">Post</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         {user ? (
                             <li className="Welcome-message">
